@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2024 The LineageOS Project
+# Copyright (C) 2024 The infinityOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -9,12 +9,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common RisingOs stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 # Inherit from peridot device
 $(call inherit-product, device/xiaomi/peridot/device.mk)
 
-PRODUCT_NAME := lineage_peridot
+PRODUCT_NAME := infinity_peridot
 PRODUCT_DEVICE := peridot
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := POCO
@@ -28,24 +28,14 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceName=peridot
     DeviceProduct=peridot_global \
     SystemName=peridot_global \
-    SystemDevice=peridot \
-    RisingChipset="8sGEN3" \
-    RisingMaintainer="AtharvaSwamy"
+    SystemDevice=peridot
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-
-# RisingTechOSS Flags
+# Infinity-X Flags
 TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_DEFAULT_PIXEL_LAUNCHER := true
-TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+INFINITY_BUILD_TYPE := OFFICIAL
+INFINITY_MAINTAINER := AtharvaSwamy
+TARGET_SUPPORTS_BLUR := true
 TARGET_HAS_UDFPS := true
-TARGET_ENABLE_BLUR := true
-
-# GApps
-WITH_GMS := true
-TARGET_CORE_GMS := false
-TARGET_CORE_GMS_EXTRAS := false
-
-# Maintainer
-RISING_MAINTAINER := AtharvaSwamy
+WITH_GAPPS := true

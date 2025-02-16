@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2024 The LineageOS Project
+# Copyright (C) 2024 The INFINITYOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -96,8 +96,8 @@ BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 
 BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
-    swinfo.fingerprint=peridot:$(LINEAGE_VERSION) \
-    mtdoops.fingerprint=peridot:$(LINEAGE_VERSION)
+    swinfo.fingerprint=peridot:$(INFINITY_VERSION) \
+    mtdoops.fingerprint=peridot:$(INFINITY_VERSION)
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
@@ -144,7 +144,7 @@ TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 CAMERA_PACKAGE_NAME := com.android.camera
 
 # Partitions
-ifneq ($(WITH_GMS),true)
+ifneq ($(WITH_GAPPS),true)
 BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT ?= -1
 ifeq ($(BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE),true)
 BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE ?= 1188036608
@@ -194,7 +194,8 @@ TARGET_BOARD_PLATFORM := pineapple
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/props/odm.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/props/vendor.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/props/system.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/props/system.prop \
+                      $(DEVICE_PATH)/props/phoneinfo.prop
 
 # Recovery
 $(call soong_config_set, ufsbsg, ufsframework, bsg)
