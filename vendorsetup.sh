@@ -1,6 +1,6 @@
 # Extras
 rm -rf hardware/qcom-caf/common
-git clone https://github.com/xiaomi-peridot/hardware_qcom-caf_common -b vic hardware/qcom-caf/common --depth=1
+git clone https://github.com/project-dynamic/android_hardware_qcom-caf_common hardware/qcom-caf/common --depth=1
 
 rm -rf hardware/qcom-caf/sm8650/audio/agm
 git clone https://github.com/xiaomi-peridot/vendor_qcom_opensource_agm -b vic-sm8650 hardware/qcom-caf/sm8650/audio/agm --depth=1
@@ -33,4 +33,7 @@ git clone https://github.com/Project-Flare-Devices/device_xiaomi_peridot-kernel 
 
 # Miuicamera
 git clone https://gitea.com/athizz2005/vendor_xiaomi_peridot-miuicamera -b main vendor/xiaomi/peridot-miuicamera --depth=1
-git clone https://github.com/project-dynamic/device_xiaomi_peridot-miuicamera -b 15 vendor/xiaomi/peridot-miuicamera --depth=1
+git clone https://github.com/project-dynamic/device_xiaomi_peridot-miuicamera -b 15 device/xiaomi/peridot-miuicamera --depth=1
+
+#Frameworks base patch 
+
