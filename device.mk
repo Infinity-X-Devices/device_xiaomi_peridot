@@ -28,6 +28,10 @@ $(call inherit-product-if-exists, device/xiaomi/peridot-miuicamera/device.mk)
 # Call the BCR setup
 $(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
+# Images
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/images/vendor_boot.img:vendor_boot.img
+
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
