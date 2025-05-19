@@ -353,12 +353,12 @@ PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
     $(LOCAL_PATH)/configs/linker.config.json
 
 # Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
-$(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
-$(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
-$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/qcom-battery/night_charging)
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.health-service.default
+#
+#$(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
+#$(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
+#$(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/qcom-battery/night_charging)
 
 # Logging
 SPAMMY_LOG_TAGS := \
